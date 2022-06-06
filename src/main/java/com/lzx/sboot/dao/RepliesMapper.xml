@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzx.sboot.dao.RepliesMapper">
+    <select id="idseleReplies" resultType="com.lzx.sboot.entity.Replies">
+      select * from replies where infoId=#{infoId}
+    </select>
+
+    <insert id="addRelies" parameterType="com.lzx.sboot.entity.Replies">
+      insert into replies(content,replyTime,infoId)value(#{content},#{replyTime},#{infoId})
+    </insert>
+</mapper>

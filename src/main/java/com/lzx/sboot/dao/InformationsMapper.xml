@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzx.sboot.dao.InformationsMapper">
+    <select id="seleInfor" resultType="com.lzx.sboot.entity.Informations">
+      select * from informations order by  lastPostTime desc
+    </select>
+
+    <select id="idseleInfor" resultType="com.lzx.sboot.entity.Informations">
+      select * from informations where id=#{id}
+    </select>
+
+    <update id="idupdainfor">
+      update informations set viewCount=viewCount+1 where id=#{id}
+    </update>
+
+    <update id="updateInforCount">
+        update informations set replyCount=replyCount+1,lastPostTime=#{lastPostTime} where id=#{id}
+    </update>
+</mapper>
